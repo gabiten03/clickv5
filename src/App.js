@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Header from './components/Header';
+
+import Hero2 from './components/Hero2';
+import { Divider } from "@chakra-ui/react"
+import { Box } from '@chakra-ui/layout';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+
+} from "react-router-dom";
+
+import About2 from './components/About2';
+import Footer from './components/Footer';
+import SidebySide from './components/SidebySide';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router >
+      <Box >
+        <Header > </Header>
+        <Hero2 />
+      </Box>
+      <About2 />
+
+      <SidebySide />
+      <Footer />
+
+      <Switch>
+        <Route path="/Contacto">
+        </Route>
+        <Route path="/Portfolio">
+        </Route>
+        <Route exact path="/">
+        </Route>
+      </Switch>
+
+    </Router >
   );
 }
 
