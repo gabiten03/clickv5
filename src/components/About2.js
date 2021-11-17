@@ -29,11 +29,11 @@ export default function About2() {
                 bg={bottomBg}
             >
                 <Box pt={20} rounded="md" marginX={20}>
-                    <Box w="full" px={[10, , 4]} py={20} mx="auto">
+                    <Box w="full" px={[10, 4]} py={20} mx="auto">
 
                         <Text
                             mb={2}
-                            fontSize={["2xl", , "5xl"]}
+                            fontSize={["2xl", "5xl"]}
                             fontWeight="bold"
                             lineHeight="tight"
                             color={useColorModeValue("gray.600", 'white.300')}

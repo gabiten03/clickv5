@@ -50,13 +50,13 @@ export default function Pricing() {
             justifyContent="center"
         >
             <Box py="64px" px="10" >
-                <Box w="full" px={[10, , 4]} mx="auto" textAlign="center">
+                <Box w="full" px={[10, 4]} mx="auto" textAlign="center">
                     <Text mb={2} fontSize="5xl" fontWeight="bold" lineHeight="tight">
                         Diseño y Mantenimiento
                     </Text>
                     <chakra.p
                         mb={6}
-                        fontSize={["lg", , "xl"]}
+                        fontSize={["lg", "xl"]}
                         color={useColorModeValue("gray.600", "gray.400")}
                     >
                         5 minute installation · Try Team plan features for 14 days · No
@@ -91,7 +91,7 @@ export default function Pricing() {
                     </Flex>
                 </Box>
                 <Box maxW="7xl" py="20" mx="auto">
-                    <SimpleGrid columns={[1, , , 3]} gap={[16, 8]}>
+                    <SimpleGrid columns={[1, 3]} gap={[16, 8]}>
                         <Box
                             rounded={["none", "lg"]}
                             shadow={["none", "md"]}
@@ -130,7 +130,7 @@ export default function Pricing() {
                                     </chakra.span>
                                 </Text>
                                 <Link
-                                    w={["full", , "auto"]}
+                                    w={["full", "auto"]}
                                     display="inline-flex"
                                     alignItems="center"
                                     justifyContent="center"
@@ -195,7 +195,7 @@ export default function Pricing() {
                                     </chakra.span>
                                 </Text>
                                 <Link
-                                    w={["full", , "auto"]}
+                                    w={["full", "auto"]}
                                     display="inline-flex"
                                     alignItems="center"
                                     justifyContent="center"
@@ -264,7 +264,7 @@ export default function Pricing() {
                                     </chakra.span>
                                 </Text>
                                 <Link
-                                    w={["full", , "auto"]}
+                                    w={["full", "auto"]}
                                     display="inline-flex"
                                     alignItems="center"
                                     justifyContent="center"

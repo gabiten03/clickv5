@@ -117,7 +117,7 @@ function Header() {
                                     as="form"
                                     onSubmit={handleSubmit}
                                 >
-                                    <Heading>Estaría feliz de escuchar de vos !!!</Heading>
+                                    <Heading>Estaríamos felices de escuchar de vos !!!</Heading>
                                     <InputControl marginY={3} name="name" label="Nombre" />
                                     <InputControl marginY={3} name="email" label="Email" />
                                     <TextareaControl marginY={3} name="notes" label="Mensaje" />
