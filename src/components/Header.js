@@ -1,15 +1,15 @@
 import * as React from "react";
-import { useState } from "react";
+
 import { Button, IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Link, Heading, Image } from "@chakra-ui/react";
 import { Flex, VStack, Spacer, Grid } from "@chakra-ui/layout";
 import { FaSun, FaMoon, FaEnvelope } from 'react-icons/fa'
-import { Us, Es } from 'react-flags-select';
+/* import { Us, Es } from 'react-flags-select'; */
 import Logo from "../assets/img/logo.png";
 import Logo2 from "../assets/img/logolight.png";
 
-import i18n from '../translations/i18n'
+/* import i18n from '../translations/i18n' */
 
 
 
@@ -53,16 +53,16 @@ const validationSchema = Yup.object({
 });
 
 function Header() {
-    let value;
-    const [language, setLanguage] = useState('es');
+    /*  let value; */
+    /* const [language, setLanguage] = useState('es'); */
 
-    const handleOnclick = (e) => {
-        e.preventDefault();
-        if (language === 'es') { value = 'en' } else { value = 'es' }
-        setLanguage(value);
-        i18n.changeLanguage(language);
-    }
-    const isLang = language === "en";
+    /*     const handleOnclick = (e) => {
+            e.preventDefault();
+            if (language === 'es') { value = 'en' } else { value = 'es' }
+            setLanguage(value);
+            i18n.changeLanguage(language);
+        } */
+    /*    const isLang = language === "en"; */
     const { colorMode, toggleColorMode } = useColorMode();
     const isDark = colorMode === "dark";
     const { isOpen, onOpen, onClose } = useDisclosure()

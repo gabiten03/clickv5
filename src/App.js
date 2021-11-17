@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 
 import Hero2 from './components/Hero2';
-import { Divider } from "@chakra-ui/react"
+
 import { Box } from '@chakra-ui/layout';
 import {
   BrowserRouter as Router,
@@ -15,6 +15,7 @@ import {
 import About2 from './components/About2';
 import Footer from './components/Footer';
 import SidebySide from './components/SidebySide';
+import Pricing from './components/Pricing';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Hero2 />
       </Box>
       <About2 />
-
+      <Pricing />
       <SidebySide />
       <Footer />
 

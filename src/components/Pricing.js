@@ -12,7 +12,7 @@ import {
     useColorModeValue,
 } from "@chakra-ui/react";
 
-export default function Component() {
+export default function Pricing() {
     const [frequency, setFrequency] = useState("month");
     const Feature = (props) => {
         return (
@@ -44,19 +44,19 @@ export default function Component() {
     return (
         <Flex
             w="full"
-            bg={useColorModeValue("gray.100", "gray.700")}
-            p={50}
+
+            py={10}
             alignItems="center"
             justifyContent="center"
         >
-            <Box py="64px" px="10" bg={useColorModeValue("gray.100", "gray.700")}>
-                <Box w="full" px={[10, 4]} mx="auto" textAlign="center">
+            <Box py="64px" px="10" >
+                <Box w="full" px={[10, , 4]} mx="auto" textAlign="center">
                     <Text mb={2} fontSize="5xl" fontWeight="bold" lineHeight="tight">
-                        Plans & Pricing
+                        Diseño y Mantenimiento
                     </Text>
                     <chakra.p
                         mb={6}
-                        fontSize={["lg", "xl"]}
+                        fontSize={["lg", , "xl"]}
                         color={useColorModeValue("gray.600", "gray.400")}
                     >
                         5 minute installation · Try Team plan features for 14 days · No
@@ -72,12 +72,12 @@ export default function Component() {
                             bg={useColorModeValue("gray.200", "gray.600")}
                         >
                             <Button
-                                colorScheme="brand"
+                                bg={useColorModeValue("violet", "violet")}
                                 variant={frequency === "month" ? "solid" : "ghost"}
                                 onClick={() => setFrequency("month")}
                                 px={6}
                             >
-                                Bill Monthly
+                                Diseño
                             </Button>
                             <Button
                                 colorScheme="brand"
@@ -87,7 +87,6 @@ export default function Component() {
                             >
                                 Bill Yearly
                             </Button>
-
                         </Stack>
                     </Flex>
                 </Box>

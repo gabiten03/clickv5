@@ -25,7 +25,7 @@ const Hero2 = () => {
                     letterSpacing={{ base: "normal", md: "tight" }}
                     color={useColorModeValue("gray.900", 'gray.100')}
                 >
-                    All your{" "}
+                    No creamos {" "}
                     <Text
                         display={{ base: "block", lg: "inline" }}
                         w="full"
@@ -33,9 +33,9 @@ const Hero2 = () => {
                         bgGradient="linear(to-r, green.400,purple.500)"
                         fontWeight="extrabold"
                     >
-                        customer feedback
+                        solo diseños,
                     </Text>{" "}
-                    in one single place.
+                    creamos experiencias.
                 </chakra.h1>
                 <chakra.p
                     px={{ base: 0, lg: 24 }}
@@ -43,9 +43,7 @@ const Hero2 = () => {
                     fontSize={{ base: "lg", md: "xl" }}
                     color={useColorModeValue("gray.600", 'gray.300')}
                 >
-                    Hellonext is a feature voting software where you can allow your users
-                    to vote on features, publish roadmap, and complete your customer
-                    feedback loop.
+                    Sitios Web, E-Commence, Blogs, Chatbots, Diseños a Medida
                 </chakra.p>
                 <Stack
                     direction={{ base: "column", sm: "row" }}
@@ -56,7 +54,7 @@ const Hero2 = () => {
                     <Button
                         as="a"
                         variant="solid"
-                        colorScheme="brand"
+                        bg="violet"
                         display="inline-flex"
                         alignItems="center"
                         justifyContent="center"
@@ -64,8 +62,9 @@ const Hero2 = () => {
                         mb={{ base: 2, sm: 0 }}
                         size="lg"
                         cursor="pointer"
+                        color='white'
                     >
-                        Get Started
+                        Consultar
                         <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
                             <path
                                 fillRule="evenodd"
@@ -76,7 +75,7 @@ const Hero2 = () => {
                     </Button>
                     <Button
                         as="a"
-                        colorScheme="gray"
+                        colorScheme="violet"
                         display="inline-flex"
                         alignItems="center"
                         justifyContent="center"
@@ -85,7 +84,7 @@ const Hero2 = () => {
                         size="lg"
                         cursor="pointer"
                     >
-                        Book a Demo
+                        Consultar
                         <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
                             <path
                                 fillRule="evenodd"
