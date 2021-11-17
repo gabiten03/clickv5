@@ -36,7 +36,7 @@ export default function About2() {
                             fontSize={["2xl", "5xl"]}
                             fontWeight="bold"
                             lineHeight="tight"
-                            color={useColorModeValue("gray.600", 'white.300')}
+                            color={useColorModeValue("black", 'white')}
                             paddingBottom={10}
                         >
                             Quienes somos?
@@ -44,7 +44,7 @@ export default function About2() {
                         <chakra.p
                             px={{ base: 0, lg: 24 }}
                             mb={6}
-                            fontSize={{ base: "lg", md: "xl" }}
+                            fontSize={["1xl", "2xl"]}
                             color={useColorModeValue("gray.600", 'gray.300')}
                         >
                             Somos un grupo de profesionales especializados en diseño Web y nuevas tecnologías.

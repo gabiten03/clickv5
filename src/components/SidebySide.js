@@ -8,6 +8,7 @@ import {
     SimpleGrid,
     useColorModeValue,
     Image,
+    Text
 } from "@chakra-ui/react";
 
 import Image1 from "../assets/img/disenoweb.jpg";
@@ -33,7 +34,19 @@ export default function SidebySide() {
                 px={8}
                 py={20}
                 mx="auto"
+                textAlign={{ base: "center", md: "center" }}
             >
+                <Text
+                    mb={2}
+                    alignItems="center"
+                    fontSize={["2xl", "5xl"]}
+                    fontWeight="bold"
+                    lineHeight="tight"
+                    color={useColorModeValue("black", 'white.300')}
+                    paddingBottom={10}
+                >
+                    Nuestros servicios
+                </Text>
                 <SimpleGrid
                     alignItems="center"
                     columns={{ base: 1, md: 2 }}
@@ -43,23 +56,24 @@ export default function SidebySide() {
                     spacingX={{ base: 10, md: 24 }}
                 >
                     <Box >
-                        <chakra.h2
+                        <chakra.h1
                             mb={4}
                             fontSize={{ base: "2xl", md: "4xl" }}
+                            fontWeight="bold"
 
-                            letterSpacing="tight"
+
                             textAlign={{ base: "center", md: "left" }}
                             color={useColorModeValue("gray.900", "gray.400")}
-                            lineHeight={{ md: "shorter" }}
-                            textShadow="2px 0 currentcolor"
+
                         >
                             Diseño Web, E-Commerce , Blog
-                        </chakra.h2>
+                        </chakra.h1>
                         <chakra.p
                             mb={5}
                             textAlign={{ base: "center", sm: "left" }}
-                            color={useColorModeValue("gray.600", "gray.400")}
-                            fontSize={{ md: "lg" }}
+                            color={useColorModeValue("gray.600", 'gray.300')}
+                            fontSize={["1xl", "2xl"]}
+                            paddingBottom={6}
                         >
                             Diseños únicos, elegantes, robustos, diseñados pensando en cada detalle.
                             Superadaptables, permiten adaptarse a tus necesidades y que permitan futuras modificaciones.
@@ -70,6 +84,7 @@ export default function SidebySide() {
                         <Button
                             w={{ base: "full", sm: "auto" }}
                             size="lg"
+
                             bg={useColorModeValue("violet", "violet")}
                             _hover={{ bg: useColorModeValue("gray.700", "gray.600") }}
                             color={useColorModeValue("gray.100", "gray.200")}
@@ -98,22 +113,25 @@ export default function SidebySide() {
                     spacingX={{ base: 10, md: 24 }}
                 >
                     <Box order={{ base: "none", md: 2 }}>
-                        <chakra.h2
+                        <chakra.h1
                             mb={4}
                             fontSize={{ base: "2xl", md: "4xl" }}
+                            fontWeight="bold"
 
-                            letterSpacing="tight"
+
                             textAlign={{ base: "center", md: "left" }}
                             color={useColorModeValue("gray.900", "gray.400")}
                             lineHeight={{ md: "shorter" }}
+                            paddingBottom={6}
                         >
                             Chatbot
-                        </chakra.h2>
+                        </chakra.h1>
                         <chakra.p
                             mb={5}
                             textAlign={{ base: "center", sm: "left" }}
-                            color={useColorModeValue("gray.600", "gray.400")}
-                            fontSize={{ md: "lg" }}
+                            color={useColorModeValue("gray.600", 'gray.300')}
+                            fontSize={["1xl", "2xl"]}
+                            paddingBottom={6}
                         >
                             Potencia la comunicación con tus clientes. Chatbots basados en inteligencia artificial te ayudarán a responder a las consultas de tus clientes al instante, los 365 días del año.
                         </chakra.p>
@@ -146,23 +164,25 @@ export default function SidebySide() {
                     marginX={20}
                 >
                     <Box>
-                        <chakra.h2
+                        <chakra.h1
                             mb={4}
                             fontSize={{ base: "2xl", md: "4xl" }}
+                            fontWeight="bold"
 
-                            letterSpacing="tight"
+
                             textAlign={{ base: "center", md: "left" }}
                             color={useColorModeValue("gray.900", "gray.400")}
-                            lineHeight={{ md: "shorter" }}
-                            textShadow="2px 0 currentcolor"
+
                         >
                             Diseño a medida
-                        </chakra.h2>
+                        </chakra.h1>
                         <chakra.p
                             mb={5}
                             textAlign={{ base: "center", sm: "left" }}
-                            color={useColorModeValue("gray.600", "gray.400")}
-                            fontSize={{ md: "lg" }}
+                            color={useColorModeValue("gray.600", 'gray.300')}
+
+                            paddingBottom={6}
+                            fontSize={["1xl", "2xl"]}
                         >
                             Te ayudamos a transformar tu negocios a través de la tecnología. Automatización de procesos, integración de aplicaciones y IoT, entre otros.
 

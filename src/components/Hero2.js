@@ -7,9 +7,55 @@ import {
     Stack,
     Text,
     Icon,
+    ModalOverlay,
+    ModalCloseButton,
+    ModalBody,
+    ModalContent,
+    Modal,
+    ModalFooter,
+    useDisclosure,
+    Heading
 } from "@chakra-ui/react";
 
+import { Formik } from "formik";
+import {
+    InputControl,
+    SubmitButton,
+    TextareaControl
+} from "formik-chakra-ui";
+
+import * as Yup from "yup";
+import Typewriter from 'typewriter-effect';
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const onSubmit = (values) => {
+    sleep(300).then(() => {
+        window.alert(JSON.stringify(values, null, 2));
+    });
+};
+
+const initialValues = {
+    name: "",
+
+
+    notes: "",
+
+};
+const validationSchema = Yup.object({
+    name: Yup.string()
+        .min(2, 'Demasiado Corto')
+        .max(50, 'Demasiado Largo!')
+        .required('Requerido'),
+    notes: Yup.string()
+        .max(250, 'Demasiado Largo!')
+        .required('Requerido'),
+    email: Yup.string().email('Mail Invalido').required('Requerido'),
+
+});
+
+
 const Hero2 = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Box px={8} py={24} mx="auto">
             <Box
@@ -17,14 +63,17 @@ const Hero2 = () => {
                 mx="auto"
                 textAlign={{ base: "left", md: "center" }}
             >
+
                 <chakra.h1
                     mb={6}
                     fontSize={{ base: "4xl", md: "6xl" }}
                     fontWeight="bold"
                     lineHeight="none"
                     letterSpacing={{ base: "normal", md: "tight" }}
-                    color={useColorModeValue("gray.900", 'gray.100')}
+                    color="linear(to-r, green.400,purple.500)"
                 >
+
+
                     No creamos {" "}
                     <Text
                         display={{ base: "block", lg: "inline" }}
@@ -37,14 +86,28 @@ const Hero2 = () => {
                     </Text>{" "}
                     creamos experiencias.
                 </chakra.h1>
-                <chakra.p
+                <chakra.h3
                     px={{ base: 0, lg: 24 }}
                     mb={6}
-                    fontSize={{ base: "lg", md: "xl" }}
-                    color={useColorModeValue("gray.600", 'gray.300')}
+                    fontWeight="bold"
+                    fontSize={{ base: "3xl", md: "4xl" }}
+                    color={useColorModeValue("black", 'white')}
                 >
-                    Sitios Web, E-Commence, Blogs, Chatbots, Diseños a Medida
-                </chakra.p>
+
+
+                    <Typewriter
+                        options={{
+                            strings: ['Diseños Creativos e Inteligentes', 'Sitios Web, Ecommerce´s , Blog´s', 'Transforma tu negocio'],
+                            autoStart: true,
+                            loop: true,
+                            delay: 150,
+                            deleteSpeed: 30,
+                            color: "linear(to-r, green.400,purple.500)",
+
+
+                        }}
+                    />
+                </chakra.h3>
                 <Stack
                     direction={{ base: "column", sm: "row" }}
                     mb={{ base: 4, md: 8 }}
@@ -63,6 +126,7 @@ const Hero2 = () => {
                         size="lg"
                         cursor="pointer"
                         color='white'
+                        onClick={onOpen}
                     >
                         Consultar
                         <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
@@ -73,26 +137,7 @@ const Hero2 = () => {
                             />
                         </Icon>
                     </Button>
-                    <Button
-                        as="a"
-                        colorScheme="violet"
-                        display="inline-flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        w={{ base: "full", sm: "auto" }}
-                        mb={{ base: 2, sm: 0 }}
-                        size="lg"
-                        cursor="pointer"
-                    >
-                        Consultar
-                        <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
-                            <path
-                                fillRule="evenodd"
-                                d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
-                                clipRule="evenodd"
-                            />
-                        </Icon>
-                    </Button>
+
                 </Stack>
             </Box>
             <Box
@@ -103,6 +148,46 @@ const Hero2 = () => {
             >
 
             </Box>
+            <Modal isOpen={isOpen} onClose={onClose} size="full"  >
+                <ModalOverlay />
+                <ModalContent>
+
+                    <ModalCloseButton size="lg" color="#4e4edd" />
+
+                    <ModalBody marginTop={20}>
+
+
+                        <Formik
+                            initialValues={initialValues}
+                            onSubmit={onSubmit}
+                            validationSchema={validationSchema}
+                        >
+                            {({ handleSubmit, values, errors }) => (
+                                <Box
+
+                                    maxWidth={800}
+                                    p={6}
+                                    m="10px auto"
+                                    as="form"
+                                    onSubmit={handleSubmit}
+                                >
+                                    <Heading>Estaríamos felices de escuchar de vos !!!</Heading>
+                                    <InputControl marginY={3} name="name" label="Nombre" />
+                                    <InputControl marginY={3} name="email" label="Email" />
+                                    <TextareaControl marginY={3} name="notes" label="Mensaje" />
+                                    <ModalFooter>
+                                        <SubmitButton colorScheme="blue" marginY={8} marginX={6}>Enviar</SubmitButton>
+
+                                        <Button colorScheme="blue" onClick={onClose} variant="outline">Cerrar</Button>
+
+                                    </ModalFooter>
+
+                                </Box>
+                            )}
+                        </Formik>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
         </Box>
     );
 };

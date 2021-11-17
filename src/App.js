@@ -15,7 +15,7 @@ import {
 import About2 from './components/About2';
 import Footer from './components/Footer';
 import SidebySide from './components/SidebySide';
-import Pricing from './components/Pricing';
+
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Hero2 />
       </Box>
       <About2 />
-      <Pricing />
+
       <SidebySide />
       <Footer />
 
