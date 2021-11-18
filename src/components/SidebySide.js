@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import {
     Box,
     Button,
@@ -19,6 +20,7 @@ import Image3 from "../assets/img/diseno-a-medida1.jpg";
 
 
 export default function SidebySide() {
+
     return (
         <Flex
             bg={useColorModeValue("#F9FAFB", "gray.600")}

@@ -27,12 +27,11 @@ import {
 import * as Yup from "yup";
 import Typewriter from 'typewriter-effect';
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-const onSubmit = (values) => {
-    sleep(300).then(() => {
-        window.alert(JSON.stringify(values, null, 2));
-    });
-};
+import { init } from 'emailjs-com';
+import emailjs from 'emailjs-com'
+
+
+
 
 const initialValues = {
     name: "",
@@ -56,6 +55,15 @@ const validationSchema = Yup.object({
 
 const Hero2 = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    init("user_5opBudnu20FmVIVaRFySw");
+    function SendEmail(object) {
+        emailjs.send("service_ttla21e", "template_5dxmlgp", object, "user_5opBudnu20FmVIVaRFySw")
+            .then((result) => {
+                console.log(result.text)
+            }, (error) => {
+                console.log(error.text)
+            })
+    }
     return (
         <Box px={8} py={24} mx="auto">
             <Box
@@ -159,7 +167,12 @@ const Hero2 = () => {
 
                         <Formik
                             initialValues={initialValues}
-                            onSubmit={onSubmit}
+                            onSubmit={(values, actions) => {
+                                setTimeout(() => {
+                                    SendEmail(values)
+                                    actions.setSubmitting(false)
+                                }, 1000)
+                            }}
                             validationSchema={validationSchema}
                         >
                             {({ handleSubmit, values, errors }) => (
