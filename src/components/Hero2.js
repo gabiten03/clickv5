@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
     chakra,
     Box,
@@ -14,7 +15,9 @@ import {
     Modal,
     ModalFooter,
     useDisclosure,
-    Heading
+    Heading,
+
+
 } from "@chakra-ui/react";
 
 import { Formik } from "formik";
@@ -55,13 +58,30 @@ const validationSchema = Yup.object({
 
 const Hero2 = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const [isSucess, setIsSucess] = useState(false)
+    const [isError, setIsError] = useState(false)
+
+
+
     init("user_5opBudnu20FmVIVaRFySw");
     function SendEmail(object) {
-        emailjs.send("service_ttla21e", "template_5dxmlgp", object, "user_5opBudnu20FmVIVaRFySw")
+        emailjs.send("service_ttla21e", "template_k34sxy4", object, "user_5opBudnu20FmVIVaRFySw")
             .then((result) => {
-                console.log(result.text)
+
+
+                setIsSucess(true)
+                setIsError(false)
+
+
+
             }, (error) => {
-                console.log(error.text)
+
+
+                setIsError(true)
+                setIsSucess(false)
+
+
             })
     }
     return (
@@ -188,10 +208,18 @@ const Hero2 = () => {
                                     <InputControl marginY={3} name="name" label="Nombre" />
                                     <InputControl marginY={3} name="email" label="Email" />
                                     <TextareaControl marginY={3} name="notes" label="Mensaje" />
+                                    {isSucess ? <Text fontSize="lg" color="green">Mensaje enviado. Gracias por contactarnos !!!</Text> : null}
+                                    {isError ? <Text fontSize="lg" color="red">Error al enviar el mensaje, intente nuevamente mas tarde</Text> : null}
                                     <ModalFooter>
-                                        <SubmitButton colorScheme="blue" marginY={8} marginX={6}>Enviar</SubmitButton>
+
+
+
+                                        <SubmitButton isDisabled={isSucess} colorScheme="blue" marginY={8} marginX={6}>Enviado</SubmitButton>
+
 
                                         <Button colorScheme="blue" onClick={onClose} variant="outline">Cerrar</Button>
+
+
 
                                     </ModalFooter>
 
@@ -200,7 +228,9 @@ const Hero2 = () => {
                         </Formik>
                     </ModalBody>
                 </ModalContent>
+
             </Modal>
+
         </Box>
     );
 };
