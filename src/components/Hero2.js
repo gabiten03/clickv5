@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion"
 import {
     chakra,
     Box,
@@ -16,7 +17,6 @@ import {
     ModalFooter,
     useDisclosure,
     Heading,
-
 
 } from "@chakra-ui/react";
 
@@ -85,7 +85,8 @@ const Hero2 = () => {
             })
     }
     return (
-        <Box px={8} py={24} mx="auto">
+        <Box px={8} py={24} mx="auto" bg={useColorModeValue(" rgb(100,0,123)", "#1A202C")} >
+
             <Box
                 w={{ base: "full", md: 11 / 12, xl: 9 / 12 }}
                 mx="auto"
@@ -98,7 +99,7 @@ const Hero2 = () => {
                     fontWeight="bold"
                     lineHeight="none"
                     letterSpacing={{ base: "normal", md: "tight" }}
-                    color="linear(to-r, green.400,purple.500)"
+                    color="white"
                 >
 
 
@@ -119,7 +120,7 @@ const Hero2 = () => {
                     mb={6}
                     fontWeight="bold"
                     fontSize={{ base: "3xl", md: "4xl" }}
-                    color={useColorModeValue("black", 'white')}
+                    color='white'
                 >
 
 
@@ -142,29 +143,38 @@ const Hero2 = () => {
                     spacing={2}
                     justifyContent={{ sm: "left", md: "center" }}
                 >
-                    <Button
-                        as="a"
-                        variant="solid"
-                        bg="violet"
-                        display="inline-flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        w={{ base: "full", sm: "auto" }}
-                        mb={{ base: 2, sm: 0 }}
-                        size="lg"
-                        cursor="pointer"
-                        color='white'
-                        onClick={onOpen}
+                    <motion.div
+                        whileHover={{ scale: 1.3 }}
+
                     >
-                        Consultar
-                        <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
-                            <path
-                                fillRule="evenodd"
-                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                            />
-                        </Icon>
-                    </Button>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            border="1px"
+                            display="inline-flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            w={{ base: "auto", sm: "auto" }}
+                            mb={{ base: 2, sm: 0 }}
+                            _hover={{ bg: "unset" }}
+
+                            margin='14px'
+                            size="lg"
+                            cursor="pointer"
+                            color='white'
+                            rounded="full"
+                            onClick={onOpen}
+                        >
+                            Consultar
+                            <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                                <path
+                                    fillRule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                />
+                            </Icon>
+                        </Button>
+                    </motion.div>
 
                 </Stack>
             </Box>
@@ -231,7 +241,7 @@ const Hero2 = () => {
 
             </Modal>
 
-        </Box>
+        </Box >
     );
 };
 

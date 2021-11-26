@@ -5,20 +5,22 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import { Link, Heading, Image } from "@chakra-ui/react";
 import { Flex, VStack, Spacer, Grid } from "@chakra-ui/layout";
 import { FaSun, FaMoon, FaEnvelope } from 'react-icons/fa'
+import { motion } from "framer-motion";
 /* import { Us, Es } from 'react-flags-select'; */
 import Logo from "../assets/img/logo.png";
-import Logo2 from "../assets/img/logolight.png";
+
 
 /* import i18n from '../translations/i18n' */
 
 
 
-import { Box, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, Modal, ModalFooter, useDisclosure } from "@chakra-ui/react";
+import { Box, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, Modal, ModalFooter, useDisclosure, useColorModeValue } from "@chakra-ui/react";
 import { Formik } from "formik";
 import {
     InputControl,
     SubmitButton,
-    TextareaControl
+    TextareaControl,
+
 } from "formik-chakra-ui";
 
 
@@ -52,6 +54,8 @@ const validationSchema = Yup.object({
 
 });
 
+
+
 function Header() {
     /*  let value; */
     /* const [language, setLanguage] = useState('es'); */
@@ -70,24 +74,34 @@ function Header() {
     return (
 
         <>
-            <Grid >
+            <Grid bg={useColorModeValue(" rgb(100,0,123)", "#1A202C")}>
                 <VStack p={5}>
                     <Flex w="100%" margin={5}>
                         <Heading marginLeft={15}
                             ml="8" size="md" fontWeight='semibold' color="cyan.800">
-                            <Link ml={8} href="/" isExternal>
-                                <Image src={isDark ? Logo : Logo2} alt="logo" />
+                            <Link href="/" isExternal>
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+
+                                >
+                                    <Image src={Logo} alt="logo" />
+                                </motion.div>
                             </Link>
                         </Heading>
                         <Spacer></Spacer>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
 
-                        <IconButton onClick={onOpen} icon={<FaEnvelope />} isRound='true' ></IconButton>
+                        >
+                            <IconButton onClick={onOpen} icon={<FaEnvelope />} isRound='true' ></IconButton>
+                        </motion.div>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                        >
+                            <IconButton ml={6} mr={6} icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>
 
 
-
-                        {/*  <IconButton ml={8} icon={isLang ? <Es /> : <Us />} isRound='true' onClick={handleOnclick}>
-                        </IconButton> */}
-                        <IconButton ml={8} mr={8} icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>
+                        </motion.div>
                     </Flex>
 
                 </VStack>
