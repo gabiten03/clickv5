@@ -22,17 +22,9 @@ function App() {
   return (
     <Router >
       <Box >
-        <Header > </Header>
-
+        <Header />
       </Box>
-
-
-
       <Switch>
-        <Route path="/Contacto">
-        </Route>
-        <Route path="/Portfolio">
-        </Route>
         <Route exact path="/">
           <Hero2 />
           <About2 />

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import {
     Box,
     Button,
@@ -9,14 +8,15 @@ import {
     SimpleGrid,
     useColorModeValue,
     Image,
-    Text
+    Text,
+
+
 } from "@chakra-ui/react";
 
 import Image1 from "../assets/img/disenoweb.jpg";
 import Image2 from "../assets/img/chatbot1.jpg";
 
 import Image3 from "../assets/img/diseno-a-medida1.jpg";
-
 
 
 export default function SidebySide() {

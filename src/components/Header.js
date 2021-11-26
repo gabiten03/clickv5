@@ -97,6 +97,7 @@ function Header() {
                         </motion.div>
                         <motion.div
                             whileHover={{ scale: 1.1 }}
+                            drag
                         >
                             <IconButton ml={6} mr={6} icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>
 
