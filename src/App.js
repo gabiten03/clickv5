@@ -15,6 +15,7 @@ import {
 import About2 from './components/About2';
 import Footer from './components/Footer';
 import SidebySide from './components/SidebySide';
+import Error from './components/Error';
 
 
 function App() {
@@ -22,12 +23,10 @@ function App() {
     <Router >
       <Box >
         <Header > </Header>
-        <Hero2 />
-      </Box>
-      <About2 />
 
-      <SidebySide />
-      <Footer />
+      </Box>
+
+
 
       <Switch>
         <Route path="/Contacto">
@@ -35,9 +34,15 @@ function App() {
         <Route path="/Portfolio">
         </Route>
         <Route exact path="/">
+          <Hero2 />
+          <About2 />
+          <SidebySide />
+        </Route>
+        <Route path="*" >
+          <Error />
         </Route>
       </Switch>
-
+      <Footer />
     </Router >
   );
 }
