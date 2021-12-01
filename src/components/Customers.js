@@ -1,95 +1,89 @@
 import React from 'react'
-import { Grid, Box, Flex } from '@chakra-ui/layout'
+
+import { Box, Flex, SimpleGrid } from '@chakra-ui/layout'
+import { Image } from '@chakra-ui/image'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import { chakra } from '@chakra-ui/system'
 import { motion } from 'framer-motion'
+import image1 from '../assets/img/1.png'
+import image2 from '../assets/img/2.png'
+import image3 from '../assets/img/3.png'
+import image4 from '../assets/img/4.png'
+import image5 from '../assets/img/4.png'
+
+const items = (item, width, paddingTop) => {
+    paddingTop = parseInt(paddingTop)
+
+    return (
+        <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.2 }}
+        >
+            <Box w='100%' h='100' margin={10}>
+
+                <Image src={item} width={width}
+                />
+            </Box>
+        </motion.div >
+    )
+}
 
 function Customers() {
     return (
 
         <Flex
-
-            bg={useColorModeValue("brand.500")}
+            bg={useColorModeValue("rgb(100,0,123)")}
             px={8}
-            py={24}
-            mx="auto"
-            justifyContent="center"
-            alignContent="center"
+
         >
             <Box
                 w={"full"}
-                mx="auto"
-                pr={{ md: 20 }}
+                my={8}
+
+                alignContent="center"
+                alignItems="center"
                 marginBottom={{ base: 4, md: 6 }}
             >
                 <chakra.h2
                     fontSize={{ base: "3xl", sm: "4xl" }}
                     fontWeight="extrabold"
                     lineHeight="shorter"
-                    color={useColorModeValue("black.200", "gray.500")}
-                    mb={6}
+                    marginTop={20}
+
                     mx="auto"
-                    alignContent="center"
+                    textAlign="center"
                 >
 
                     <chakra.span
 
-                        color={useColorModeValue("black.200", "gray.500")}
+                        color={useColorModeValue("white", "gray.500")}
 
                         alignContent="center"
+                        alignItems="center"
                         mx="auto"
                     >
                         Ultimos Trabajos
                     </chakra.span>
                 </chakra.h2>
-                <Grid templateColumns='repeat(5, 1fr)' gap={6} margin={20}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+                    spacing={20}
+                    px={{ base: 4, lg: 16, xl: 24 }}
+                    py={20}
+                    mx="auto"
+                >
 
-                    <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <Box w='100%' h='100' rounded="lg"
-                            shadow="2xl" />
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                    >
+                    {items(image1, '60%', '-0')}
+                    {items(image2, '40%', '0')}
+                    {items(image3, '60%', '0')}
+                    {items(image4, '100%', '0')}
 
-                        <Box w='100%' h='100' rounded="lg"
-                            shadow="2xl" />
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <Box w='100%' h='100' rounded="lg"
-                            shadow="2xl" />
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <Box w='100%' h='100' rounded="lg"
-                            shadow="2xl" />
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <Box w='100%' h='100' rounded="lg"
-                            shadow="2xl" />
-                    </motion.div>
 
-                </Grid>
+
+                </SimpleGrid>
             </Box>
 
-        </Flex>
+        </Flex >
     )
 }
 
