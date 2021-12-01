@@ -9,7 +9,7 @@ import image1 from '../assets/img/1.png'
 import image2 from '../assets/img/2.png'
 import image3 from '../assets/img/3.png'
 import image4 from '../assets/img/4.png'
-import image5 from '../assets/img/4.png'
+
 
 const items = (item, width, paddingTop) => {
     paddingTop = parseInt(paddingTop)
