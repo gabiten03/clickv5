@@ -9,7 +9,7 @@ import {
     Flex,
     useColorModeValue,
     Image,
-    Text,
+
     Stack
 
 
