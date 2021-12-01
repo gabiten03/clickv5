@@ -14,8 +14,10 @@ import {
 
 import About2 from './components/About2';
 import Footer from './components/Footer';
-import SidebySide from './components/SidebySide';
+
 import Error from './components/Error';
+import SideItems from './components/SideItems';
+
 
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
         <Route exact path="/">
           <Hero2 />
           <About2 />
-          <SidebySide />
+
+          <SideItems />
+
         </Route>
         <Route path="*" >
           <Error />
@@ -40,3 +44,4 @@ function App() {
 }
 
 export default App;
+

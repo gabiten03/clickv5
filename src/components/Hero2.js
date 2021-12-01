@@ -161,7 +161,7 @@ const Hero2 = () => {
                             margin='14px'
                             size="lg"
                             cursor="pointer"
-                            color='white'
+                            color='whiteAlpha.800'
                             rounded="full"
                             onClick={onOpen}
                         >

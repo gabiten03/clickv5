@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 /* import { Us, Es } from 'react-flags-select'; */
 import Logo from "../assets/img/logo.png";
 
-
+import '../App.css';
 /* import i18n from '../translations/i18n' */
 
 
@@ -82,7 +82,14 @@ function Header() {
                             <Link href="/" isExternal>
                                 <motion.div
                                     whileHover={{ scale: 1.1 }}
-
+                                    drag
+                                    dragConstraints={{
+                                        top: 0,
+                                        left: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                    }}
+                                    dragElastic={1}
                                 >
                                     <Image src={Logo} alt="logo" />
                                 </motion.div>
@@ -98,6 +105,15 @@ function Header() {
                         <motion.div
                             whileHover={{ scale: 1.1 }}
                             drag
+                            dragConstraints={{
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                            }}
+                            dragElastic={1}
+
+
                         >
                             <IconButton ml={6} mr={6} icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>
 
