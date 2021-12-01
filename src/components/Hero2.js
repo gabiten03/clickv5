@@ -68,20 +68,11 @@ const Hero2 = () => {
     function SendEmail(object) {
         emailjs.send("service_ttla21e", "template_k34sxy4", object, "user_5opBudnu20FmVIVaRFySw")
             .then((result) => {
-
-
                 setIsSucess(true)
                 setIsError(false)
-
-
-
             }, (error) => {
-
-
                 setIsError(true)
                 setIsSucess(false)
-
-
             })
     }
     return (
@@ -131,7 +122,7 @@ const Hero2 = () => {
                             loop: true,
                             delay: 150,
                             deleteSpeed: 30,
-                            color: "linear(to-r, green.400,purple.500)",
+                            color: 'gray.500',
 
 
                         }}

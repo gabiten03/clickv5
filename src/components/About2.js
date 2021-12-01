@@ -36,7 +36,7 @@ export default function About2() {
                             fontSize={["2xl", "5xl"]}
                             fontWeight="bold"
                             lineHeight="tight"
-                            color={useColorModeValue("black", 'white')}
+                            color={useColorModeValue("black.200", "gray.500")}
                             paddingBottom={10}
                         >
                             Quienes somos?

@@ -27,6 +27,8 @@ const squareVariants = {
 export default function SidebySide({ title, description, image, ...props }) {
     let imageitem = Image1
     const controls = useAnimation();
+
+
     const [ref, inView] = useInView();
     useEffect(() => {
         if (inView) {
@@ -50,12 +52,21 @@ export default function SidebySide({ title, description, image, ...props }) {
         default:
             break;
     }
+    let isreversed = "row"
+
+
+    if (image % 2 === 0) {
+        isreversed = "row-reverse"
+    } else {
+        isreversed = "row"
+    }
+
+
 
     return (
 
-
         <Flex
-            direction={{ base: "column", md: "row" }}
+            direction={{ base: "column", md: `${isreversed}` }}
             bg={useColorModeValue("brand.500")}
             px={8}
             py={24}
@@ -143,7 +154,7 @@ export default function SidebySide({ title, description, image, ...props }) {
                         alt={image} />
                 </Box>
             </motion.div>
-        </Flex>
+        </Flex >
 
     );
 };

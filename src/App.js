@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 
 import Error from './components/Error';
 import SideItems from './components/SideItems';
+import Customers from './components/Customers';
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <About2 />
 
           <SideItems />
+          <Customers />
 
         </Route>
         <Route path="*" >
