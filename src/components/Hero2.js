@@ -65,8 +65,10 @@ const Hero2 = () => {
 
 
     init("user_5opBudnu20FmVIVaRFySw");
+
     function SendEmail(object) {
-        emailjs.send("service_ttla21e", "template_k34sxy4", object, "user_5opBudnu20FmVIVaRFySw")
+        console.log(object)
+        emailjs.send("service_tgsuj89", "template_k34sxy4", object, "user_5opBudnu20FmVIVaRFySw")
             .then((result) => {
                 setIsSucess(true)
                 setIsError(false)
@@ -188,6 +190,11 @@ const Hero2 = () => {
 
                         <Formik
                             initialValues={initialValues}
+                            //show values on screen
+
+
+
+
                             onSubmit={(values, actions) => {
                                 setTimeout(() => {
                                     SendEmail(values)

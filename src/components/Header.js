@@ -1,5 +1,6 @@
 import * as React from "react";
-
+import { useState } from "react";
+import { Text } from "@chakra-ui/layout";
 import { Button, IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Link, Heading, Image } from "@chakra-ui/react";
@@ -27,13 +28,12 @@ import {
 
 import * as Yup from "yup";
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+import emailjs from 'emailjs-com'
 
-const onSubmit = (values) => {
-    sleep(300).then(() => {
-        window.alert(JSON.stringify(values, null, 2));
-    });
-};
+
+
+
+
 
 const initialValues = {
     name: "",
@@ -67,6 +67,20 @@ function Header() {
             i18n.changeLanguage(language);
         } */
     /*    const isLang = language === "en"; */
+    const [isSucess, setIsSucess] = useState(false)
+    const [isError, setIsError] = useState(false)
+
+    function SendEmail(object) {
+        console.log(object)
+        emailjs.send("service_tgsuj89", "template_k34sxy4", object, "user_5opBudnu20FmVIVaRFySw")
+            .then((result) => {
+                setIsSucess(true)
+                setIsError(false)
+            }, (error) => {
+                setIsError(true)
+                setIsSucess(false)
+            })
+    }
     const { colorMode, toggleColorMode } = useColorMode();
     const isDark = colorMode === "dark";
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -136,7 +150,12 @@ function Header() {
 
                         <Formik
                             initialValues={initialValues}
-                            onSubmit={onSubmit}
+                            onSubmit={(values, actions) => {
+                                setTimeout(() => {
+                                    SendEmail(values)
+                                    actions.setSubmitting(false)
+                                }, 1000)
+                            }}
                             validationSchema={validationSchema}
                         >
                             {({ handleSubmit, values, errors }) => (
@@ -152,6 +171,8 @@ function Header() {
                                     <InputControl marginY={3} name="name" label="Nombre" />
                                     <InputControl marginY={3} name="email" label="Email" />
                                     <TextareaControl marginY={3} name="notes" label="Mensaje" />
+                                    {isSucess ? <Text fontSize="lg" color="green">Mensaje enviado. Gracias por contactarnos !!!</Text> : null}
+                                    {isError ? <Text fontSize="lg" color="red">Error al enviar el mensaje, intente nuevamente mas tarde</Text> : null}
                                     <ModalFooter>
                                         <SubmitButton colorScheme="blue" marginY={8} marginX={6}>Enviar</SubmitButton>
 
