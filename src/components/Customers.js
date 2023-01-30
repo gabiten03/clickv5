@@ -67,7 +67,7 @@ function Customers() {
                         Ultimos Trabajos
                     </chakra.span>
                 </chakra.h2>
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 3 }}
                     spacing={20}
                     px={{ base: 4, lg: 16, xl: 24 }}
                     py={20}
