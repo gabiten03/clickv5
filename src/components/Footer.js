@@ -1,16 +1,16 @@
 import {
     Box,
-    chakra,
+    //chakra,
     Container,
     Stack,
     Text,
     useColorModeValue,
-    VisuallyHidden,
+    //VisuallyHidden,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+//import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 
-const SocialButton = ({
+/*const SocialButton = ({
     children,
     label,
     href,
@@ -35,7 +35,7 @@ const SocialButton = ({
             {children}
         </chakra.button>
     );
-};
+};*/
 
 export default function Footer() {
     return (
@@ -52,7 +52,9 @@ export default function Footer() {
                 justify={{ base: 'center', md: 'space-between' }}
             >
                 <Text>© 2021 ClickDigital </Text>
-                <Stack direction={'row'} spacing={6}>
+
+
+                {/*  <Stack direction={'row'} spacing={6}>
                     <SocialButton label={'Twitter'} href={'#'}>
                         <FaTwitter />
                     </SocialButton>
@@ -63,6 +65,7 @@ export default function Footer() {
                         <FaInstagram />
                     </SocialButton>
                 </Stack>
+    */}
             </Container>
         </Box>
     );
