@@ -73,7 +73,7 @@ function Customers() {
                     py={20}
                     mx="auto"
                 >
-  {items(image5, '60%', '-0')}
+  {items(image5, '80%', '-0')}
                     {items(image1, '60%', '-0')}
                     {items(image2, '40%', '0')}
                     {items(image3, '60%', '0')}
