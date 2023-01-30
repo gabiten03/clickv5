@@ -9,6 +9,7 @@ import image1 from '../assets/img/1.png'
 import image2 from '../assets/img/2.png'
 import image3 from '../assets/img/3.png'
 import image4 from '../assets/img/4.png'
+import image5 from '../assets/img/5.png'
 
 
 const items = (item, width, paddingTop) => {
@@ -72,7 +73,7 @@ function Customers() {
                     py={20}
                     mx="auto"
                 >
-
+  {items(image5, '60%', '-0')}
                     {items(image1, '60%', '-0')}
                     {items(image2, '40%', '0')}
                     {items(image3, '60%', '0')}
